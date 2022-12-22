@@ -6,10 +6,88 @@
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
+  outline: 0;
+}
+html,
+body {
+  height: 100%;
+  background-color: #000;
 }
 
-body {
-  background-color: #000;
+#root {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.tweet-settings {
+  flex: 1;
+  color: #fff;
+  border-right: 1px solid #2f3336;
+  height: 100%;
+  padding: 25px;
+  h3 {
+    font-size: 24px;
+    font-weight: normal;
+    border-bottom: 1px solid #2f3336;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  ul {
+    li:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  label {
+    font-size: 15px;
+    margin-bottom: 5px;
+    display: block;
+    color: #6e767d;
+  }
+  .input {
+    width: 100%;
+    background: transparent;
+    border-bottom: 1px solid #2f3336;
+    color: #fff;
+    padding: 10px 0px 15px;
+    font-size: 15px;
+    &::placeholder {
+      color: #fff;
+    }
+    &:focus {
+      border-color: #4e555a;
+    }
+  }
+  button {
+    width: 100%;
+    height: 40px;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #fff;
+    background: #1da1f2;
+    cursor: pointer;
+  }
+  .text-area {
+    width: 100%;
+    background: transparent;
+    border-bottom: 1px solid #2f3336;
+    color: #fff;
+    padding: 10px 0px 15px;
+    font-size: 15px;
+    line-height: 1.5;
+    resize: none;
+    &::placeholder {
+      color: #fff;
+    }
+    &:focus {
+      border-color: #4e555a;
+    }
+  }
+}
+
+.tweet-container {
+  padding: 0 50px;
 }
 
 .tweet {
@@ -33,6 +111,12 @@ body {
     .name {
       color: #fff;
       font-weight: 700;
+      display: flex;
+      align-items: center;
+      height: 19px;
+      svg {
+        margin-left: 3px;
+      }
     }
     .username {
       color: #6e767d;
@@ -44,6 +128,10 @@ body {
       font-size: 23px;
       line-height: 28px;
       color: #fff;
+      overflow: hidden;
+      span {
+        color: #1da1f2;
+      }
     }
   }
   &-stats {
